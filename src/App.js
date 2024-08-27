@@ -6,7 +6,7 @@ function App() {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
 
-    const apiKey = 'dcca88c1d3058755e260b43515773103'; // کلید API خود را اینجا وارد کنید
+    const apiKey = ''; // کلید API خود را اینجا وارد کنید
 
     const fetchWeather = () => {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
