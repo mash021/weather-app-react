@@ -1,38 +1,83 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #39FF14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
   text-align: center;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input, button {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #39FF14;
+  border-radius: 4px;
+  background-color: #121212;
+  color: #39FF14;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button:hover {
+  background-color: #39FF14;
+  color: #121212;
+  cursor: pointer;
+}
+
+#weatherIcon {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.cloudy {
+  background: url('cloudy.svg') no-repeat center center;
+  background-size: contain;
+  animation: float 3s infinite ease-in-out;
+}
+
+.sunny {
+  background: url('sunny.svg') no-repeat center center;
+  background-size: contain;
+  animation: spin 10s infinite linear;
+}
+
+.rainy {
+  background: url('rainy.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.snowy {
+  background: url('snowy.svg') no-repeat center center;
+  background-size: contain;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
 }
