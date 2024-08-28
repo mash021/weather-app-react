@@ -14,7 +14,7 @@ function App() {
     const apiKey = 'dcca88c1d3058755e260b43515773103'; // کلید API خود را اینجا وارد کنید
 
     useEffect(() => {
-        if (city.length >= 3) { // فقط وقتی طول ورودی به 3 حرف رسید
+        if (city.length >= 3) {
             const url = `https://api.openweathermap.org/data/2.5/find?q=${city}&appid=${apiKey}`;
 
             axios.get(url)
@@ -43,6 +43,29 @@ function App() {
                         return;
                     }
                     setWeatherData(response.data);
+                    
+                    // خواندن نام شهر، دما، و دمای حس شده
+                    if (window.speechSynthesis) {
+                        const temperature = Math.round(response.data.main.temp);
+                        const feelsLike = Math.round(response.data.main.feels_like);
+                        let message = `The weather in ${response.data.name}, ${response.data.sys.country} is ${temperature} degrees Celsius.`;
+
+                        // اضافه کردن پیغام متناسب با دما
+                        if (temperature > 30) {
+                            message += ` It is quite hot today. Please drink more fluids.`;
+                        } else if (temperature < 10) {
+                            message += ` It is quite cold today. Please wear warm clothes.`;
+                        } else {
+                            message += ` The weather is mild today. You have the best weather.`;
+                        }
+
+                        // اضافه کردن دمای حس‌شده
+                        message += ` The feels like temperature is ${feelsLike} degrees Celsius.`;
+
+                        // خواندن پیام
+                        const utterance = new SpeechSynthesisUtterance(message);
+                        window.speechSynthesis.speak(utterance);
+                    }
                 })
                 .catch(error => {
                     alert('An error occurred');
