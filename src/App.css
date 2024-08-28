@@ -5,39 +5,40 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #1c1c1c, #3a3a3a); /* تغییر بک‌گراند کلی */
+  background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
   color: #00e5ff;
   font-family: 'Arial', sans-serif;
-  margin: 0; /* حذف حاشیه‌های اضافی */
-  padding: 0; /* حذف پدینگ‌های اضافی */
-  box-sizing: border-box; /* مطمئن شوید که ابعاد شامل پدینگ و مرزها هستند */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* تنظیمات برای ورودی و دکمه */
 input[type="text"], button {
   padding: 10px;
   border: none;
-  border-radius: 5px; /* گوشه‌های گرد */
+  border-radius: 5px;
   font-size: 1em;
-  box-sizing: border-box; /* مطمئن شوید که ابعاد شامل پدینگ و مرزها هستند */
+  box-sizing: border-box;
 }
 
 /* تنظیمات برای ورودی */
 input[type="text"] {
-  border-bottom: 2px solid #00e5ff; /* مرز پایین */
-  width: 250px;
-  background-color: #333; /* تغییر رنگ پس‌زمینه */
+  border-bottom: 2px solid #00e5ff;
+  width: 100%;
+  max-width: 300px; /* حداکثر عرض برای ورودی */
+  background-color: #333;
   color: #00e5ff;
-  margin-bottom: 20px; /* فاصله پایین */
+  margin-bottom: 20px;
 }
 
 /* استایل برای دکمه */
 button {
-  background-color: #00e5ff; /* رنگ پس‌زمینه دکمه */
-  color: #1a1a1a; /* رنگ متن دکمه */
+  background-color: #00e5ff;
+  color: #1a1a1a;
   cursor: pointer;
-  margin-top: 10px; /* فاصله بالای دکمه */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* سایه دکمه */
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* استایل برای لیست پیشنهادات */
@@ -49,7 +50,8 @@ button {
   border: 1px solid #00e5ff;
   background-color: #1a1a1a;
   border-radius: 5px;
-  width: 250px;
+  width: 100%;
+  max-width: 300px;
   max-height: 200px;
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -69,10 +71,41 @@ button {
 
 /* استایل برای بخش‌های دیگر */
 .weather-info, .hourly-forecast {
-  background-color: #2c2c2c; /* رنگ پس‌زمینه اطلاعات آب و هوا */
+  background-color: #2c2c2c;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   color: #00e5ff;
+}
+
+/* استایل برای فوتر */
+footer {
+  margin-top: auto;
+  padding: 10px;
+  background-color: #1a1a1a;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #00e5ff;
+  font-size: 0.9em;
+}
+
+/* Media queries برای طراحی ریسپانسیو */
+@media (max-width: 600px) {
+  /* تنظیمات برای صفحه‌نمایش‌های کوچکتر */
+  .container {
+      padding: 10px;
+  }
+
+  input[type="text"], button {
+      font-size: 0.9em;
+  }
+
+  .suggestions-list {
+      max-width: 100%;
+  }
 }
