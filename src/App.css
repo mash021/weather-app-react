@@ -1,83 +1,78 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #39FF14;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
+/* تنظیمات کلی صفحه */
 .container {
-  text-align: center;
-  background-color: #1c1c1c;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1c1c1c, #3a3a3a); /* تغییر بک‌گراند کلی */
+  color: #00e5ff;
+  font-family: 'Arial', sans-serif;
+  margin: 0; /* حذف حاشیه‌های اضافی */
+  padding: 0; /* حذف پدینگ‌های اضافی */
+  box-sizing: border-box; /* مطمئن شوید که ابعاد شامل پدینگ و مرزها هستند */
 }
 
-input, button {
+/* تنظیمات برای ورودی و دکمه */
+input[type="text"], button {
   padding: 10px;
-  margin: 10px 0;
-  font-size: 16px;
-  border: 1px solid #39FF14;
-  border-radius: 4px;
-  background-color: #121212;
-  color: #39FF14;
+  border: none;
+  border-radius: 5px; /* گوشه‌های گرد */
+  font-size: 1em;
+  box-sizing: border-box; /* مطمئن شوید که ابعاد شامل پدینگ و مرزها هستند */
 }
 
-button:hover {
-  background-color: #39FF14;
-  color: #121212;
+/* تنظیمات برای ورودی */
+input[type="text"] {
+  border-bottom: 2px solid #00e5ff; /* مرز پایین */
+  width: 250px;
+  background-color: #333; /* تغییر رنگ پس‌زمینه */
+  color: #00e5ff;
+  margin-bottom: 20px; /* فاصله پایین */
+}
+
+/* استایل برای دکمه */
+button {
+  background-color: #00e5ff; /* رنگ پس‌زمینه دکمه */
+  color: #1a1a1a; /* رنگ متن دکمه */
+  cursor: pointer;
+  margin-top: 10px; /* فاصله بالای دکمه */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* سایه دکمه */
+}
+
+/* استایل برای لیست پیشنهادات */
+.suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  border: 1px solid #00e5ff;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  width: 250px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  color: #00e5ff;
   cursor: pointer;
 }
 
-#weatherIcon {
-  width: 100px;
-  height: 100px;
-  margin: 20px auto;
+.suggestions-list li:hover {
+  background-color: #00e5ff;
+  color: #1a1a1a;
 }
 
-.cloudy {
-  background: url('cloudy.svg') no-repeat center center;
-  background-size: contain;
-  animation: float 3s infinite ease-in-out;
-}
-
-.sunny {
-  background: url('sunny.svg') no-repeat center center;
-  background-size: contain;
-  animation: spin 10s infinite linear;
-}
-
-.rainy {
-  background: url('rainy.svg') no-repeat center center;
-  background-size: contain;
-}
-
-.snowy {
-  background: url('snowy.svg') no-repeat center center;
-  background-size: contain;
-}
-
-@keyframes float {
-  0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-10px);
-  }
-  100% {
-      transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
+/* استایل برای بخش‌های دیگر */
+.weather-info, .hourly-forecast {
+  background-color: #2c2c2c; /* رنگ پس‌زمینه اطلاعات آب و هوا */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #00e5ff;
 }

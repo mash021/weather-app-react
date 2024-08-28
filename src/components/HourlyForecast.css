@@ -1,0 +1,30 @@
+.hourly-forecast {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: #262626;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+.hour-card {
+    flex: 0 0 auto;
+    width: 80px; /* افزایش عرض کارت برای جا دادن تاریخ */
+    margin-right: 10px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #00e5ff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hour-card p {
+    margin: 5px 0;
+}
+
+.hour-card img {
+    width: 40px;
+    height: 40px;
+}
