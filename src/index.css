@@ -1,0 +1,9 @@
+/* index.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ed0000;
+  }
+  /* استایل‌های slick-carousel */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
